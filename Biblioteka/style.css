@@ -1,0 +1,144 @@
+
+@font-face {
+    font-family: 'SimpleGothic';
+    src: url('fonts/SimpleGothic-nAK0Y.otf') format('opentype');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3d2b1a;
+    color: #d1be9d;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'SimpleGothic', serif;
+}
+
+h1 {
+    color: #B99A61;
+}
+
+header {
+    background-color: #30191F;
+    text-align: center;
+    padding: 35px;
+    border: 2px solid #B99A61;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 60px;
+}
+
+header p {
+    font-size: 20px;
+    color: #D6BD83;
+    margin-top: -40px;
+}
+
+.welcome {
+    font-size: 24px;
+    color: #D6BD83;
+    margin-top: 10px;
+}
+
+.library {
+    background-color: #3d2b1a;
+    padding: 10px;
+    margin-top: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+.book-form {
+    margin-top: 25px;
+    padding: 25px;
+    background-color: #30191F;
+    border: 1px solid #B99A61;
+    border-radius: 10px;
+    font-size: 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-form h2 {
+    color: #B99A61;
+    font-size: 40px;
+    margin-top: 0;
+}
+
+main {
+    background-color: #24171B;
+    padding: 20px;
+}
+
+nav {
+    background-color: #30191F;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav a {
+    color: #D6BD83;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #fff0ca;
+}
+
+footer {
+}
+
+/* Układ katalogu książek */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* Pojedyncza książka */
+.book {
+    background-color: #30191F;
+    border: 1px solid #B99A61;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Okładka */
+.book-cover {
+    width: 140px;
+    height: 210px;
+    object-fit: cover;
+    border: 1px solid #B99A61;
+    border-radius: 4px;
+}
+
+/* Tytuł książki */
+.book h3 {
+    color: #B99A61;
+    font-size: 22px;
+}
+
+.book-form {
+    background-image: url("textures/drewno2.jpg");
+    background-size: cover;
+    background-position: center;
+}

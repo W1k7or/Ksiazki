@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Biblioteka</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Biblioteka</h1>
+        <p>Gdzie kruki rozumieją słowa</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#welcome">Strona główna</a></li>
+            <li><a href="#library">Katalog</a></li>
+            <li><a href="#book-form">Dodaj książkę</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <div class="welcome">
+            <h1>Witaj w Bibliotece!</h1>
+            <p>Jesteśmy zaszczyceni, że postanowiłeś wstąpić do nas na chwilę.<br>
+                Rozgość się i przejrzyj nasze propozycje.</p>
+        </div>
+
+        <div class="library">
+            <!-- Katalog książek -->
+        </div>
+
+        <div class="library" id="library">
+            <h2>Katalog </h2>
+            <p>Spójrz na nasze propozycje. Przyjacielu.</p>
+
+            <div class="book-list">
+                <?php
+
+                $polaczenie = mysqli_connect(
+                    "localhost",
+                    "root",
+                    "",
+                    "raven_library"
+                );
+                if (!$polaczenie) {
+    die("Nie udało się połączyć z bazą danych: " . mysqli_connect_error());
+} else {
+    echo "Połączono z bazą danych!";
+}
+
+$wynik = mysqli_query($polaczenie, "SELECT * FROM `ksiazki`");
+
+while ($ksiazka = mysqli_fetch_assoc($wynik)) {
+    echo $ksiazka['tytul'];
+}
+
+?>
+            </div>
+        </div>
+
+        <div class="book-form">
+            <h2>Uzupełnij księgozbiór</h2>
+
+            <?php
+                /Obsługa php tu będzie
+            ?>
+            <form action="dodaj.php" method="post">
+                <input type="text" name="tytul" placeholder="Tytuł książki"><br>
+                <input type="text" name="autor" placeholder="Autor książki"><br>
+                <input type="number" name="rok_wydania" placeholder="Rok wydania"><br>
+                <input type="text" name="gatunek" placeholder="Gatunek książki"><br>
+                <input type="submit" value="Dodaj książkę">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Stopka -->
+    </footer>
+
+</body>
+
+</html>
